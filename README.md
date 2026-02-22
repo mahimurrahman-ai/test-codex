@@ -1,13 +1,12 @@
 # Research AI Agent
 
-This repository now contains a fully working **research AI agent** built in Python.
+This repository contains a working Python **research AI agent**.
 
-## What it does
-- Searches DuckDuckGo HTML results for your research query.
-- Fetches and reads source pages.
-- Extracts useful text from each source.
-- Produces a structured Markdown research brief with findings and sources.
-- Supports **offline mode** using local files when network search is unavailable.
+## Features
+- Web research pipeline: search -> fetch -> extract -> synthesize.
+- Markdown research brief generation with findings and sources.
+- Offline mode with local files (`--local-file`) for restricted environments.
+- Dependency-free runtime (Python standard library only).
 
 ## Quick start
 
@@ -15,7 +14,7 @@ This repository now contains a fully working **research AI agent** built in Pyth
 python3 research_agent.py "AI agent evaluation metrics" --max-results 5 --output report.md
 ```
 
-## Offline mode (works without internet)
+## Offline mode
 
 ```bash
 python3 research_agent.py "RAG architecture tradeoffs" \
@@ -24,10 +23,13 @@ python3 research_agent.py "RAG architecture tradeoffs" \
   --output report.md
 ```
 
-## CLI options
+## CLI
 
 ```bash
-python3 research_agent.py "query" [--max-results 5] [--output report.md] [--local-file file1 --local-file file2]
+python3 research_agent.py "query" \
+  [--max-results 5] \
+  [--output report.md] \
+  [--local-file file1 --local-file file2]
 ```
 
 ## Run tests
@@ -36,6 +38,6 @@ python3 research_agent.py "query" [--max-results 5] [--output report.md] [--loca
 python3 -m unittest discover -s tests -v
 ```
 
-## File structure
-- `research_agent.py`: core agent logic (search, parse, summarize, report generation).
-- `tests/test_agent.py`: unit tests for parsing and summarization behavior.
+## Notes
+- In environments that block outbound HTTP/proxy access, use offline mode.
+- Missing local files are reported as explicit errors.
