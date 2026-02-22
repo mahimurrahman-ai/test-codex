@@ -1,0 +1,97 @@
+:root {
+  --bg: #0b1020;
+  --text: #e6ebff;
+  --muted: #9fb0e7;
+  --card: #151d39;
+  --accent: #7ea2ff;
+  --accent-2: #9bffd6;
+}
+
+:root.light {
+  --bg: #f5f7ff;
+  --text: #10162d;
+  --muted: #46527a;
+  --card: #ffffff;
+  --accent: #355ddf;
+  --accent-2: #0d9b6f;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.container {
+  width: min(1024px, 92%);
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 4rem 0 3rem;
+  background: radial-gradient(circle at 10% 10%, #2a3d73 0%, transparent 45%),
+              radial-gradient(circle at 80% 20%, #1f5f5f 0%, transparent 35%);
+}
+
+.tag { color: var(--accent-2); font-weight: 700; }
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0.2rem 0; }
+.subtitle { color: var(--muted); max-width: 70ch; }
+
+.cta-row { display: flex; gap: 0.8rem; margin-top: 1rem; flex-wrap: wrap; }
+.btn {
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  padding: 0.65rem 1rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+}
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--muted);
+}
+
+main { padding: 1.5rem 0 3rem; }
+h2 { margin-top: 2rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid color-mix(in oklab, var(--muted) 28%, transparent);
+  border-radius: 0.9rem;
+  padding: 1rem 1.1rem;
+  margin: 1rem 0;
+}
+
+.month h3 { margin-top: 0; }
+.goal { color: var(--accent-2); font-weight: 600; }
+.tip { color: var(--muted); }
+
+footer {
+  border-top: 1px solid color-mix(in oklab, var(--muted) 28%, transparent);
+  padding: 1rem 0 2rem;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+button {
+  border: 1px solid var(--muted);
+  background: transparent;
+  color: var(--text);
+  padding: 0.55rem 0.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
