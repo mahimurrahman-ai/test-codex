@@ -1,97 +1,144 @@
 :root {
-  --bg: #0b1020;
-  --text: #e6ebff;
-  --muted: #9fb0e7;
-  --card: #151d39;
-  --accent: #7ea2ff;
-  --accent-2: #9bffd6;
+  --bg: #0c1227;
+  --text: #eaf0ff;
+  --muted: #a5b7eb;
+  --card: #151f42;
+  --accent: #6f95ff;
+  --good: #7ff7cd;
+  --line: rgba(170, 190, 255, 0.35);
 }
 
 :root.light {
-  --bg: #f5f7ff;
-  --text: #10162d;
-  --muted: #46527a;
+  --bg: #f6f8ff;
+  --text: #111831;
+  --muted: #4d5b82;
   --card: #ffffff;
-  --accent: #355ddf;
-  --accent-2: #0d9b6f;
+  --accent: #2f56d6;
+  --good: #0b9a69;
+  --line: rgba(52, 82, 170, 0.25);
 }
 
 * { box-sizing: border-box; }
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--text);
   background: var(--bg);
 }
 
 .container {
-  width: min(1024px, 92%);
+  width: min(1050px, 92%);
   margin: 0 auto;
 }
 
 .hero {
-  padding: 4rem 0 3rem;
-  background: radial-gradient(circle at 10% 10%, #2a3d73 0%, transparent 45%),
-              radial-gradient(circle at 80% 20%, #1f5f5f 0%, transparent 35%);
+  padding: 3.5rem 0 3rem;
+  background: radial-gradient(circle at 12% 8%, #273f80 0%, transparent 46%),
+              radial-gradient(circle at 88% 24%, #226767 0%, transparent 34%);
+  border-bottom: 1px solid var(--line);
 }
 
-.tag { color: var(--accent-2); font-weight: 700; }
-h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0.2rem 0; }
-.subtitle { color: var(--muted); max-width: 70ch; }
+.tag { color: var(--good); font-weight: 700; margin: 0; }
+h1 { margin: 0.35rem 0; font-size: clamp(2rem, 5.5vw, 3.1rem); }
+.subtitle { color: var(--muted); max-width: 72ch; margin-bottom: 0; }
 
-.cta-row { display: flex; gap: 0.8rem; margin-top: 1rem; flex-wrap: wrap; }
-.btn {
-  background: var(--accent);
-  color: white;
-  text-decoration: none;
-  padding: 0.65rem 1rem;
-  border-radius: 0.6rem;
-  font-weight: 600;
-}
-.btn-ghost {
-  background: transparent;
-  border: 1px solid var(--muted);
-}
-
-main { padding: 1.5rem 0 3rem; }
-h2 { margin-top: 2rem; }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
-}
+main { padding: 1.2rem 0 2.8rem; }
 
 .card {
   background: var(--card);
-  border: 1px solid color-mix(in oklab, var(--muted) 28%, transparent);
-  border-radius: 0.9rem;
-  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
   margin: 1rem 0;
 }
 
+.cta-row,
+.controls-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn,
+button {
+  border-radius: 10px;
+  padding: 0.6rem 0.92rem;
+  font-weight: 600;
+  border: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-ghost,
+button {
+  background: transparent;
+  color: var(--text);
+}
+
+select {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.52rem 0.65rem;
+}
+
+.muted { color: var(--muted); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.95rem;
+}
+
+.month-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+
 .month h3 { margin-top: 0; }
-.goal { color: var(--accent-2); font-weight: 600; }
-.tip { color: var(--muted); }
+.month .goal { color: var(--good); font-weight: 600; }
+.month.hidden { display: none; }
+
+.progress-wrap { margin-top: 0.6rem; }
+.progress-label { margin-bottom: 0.25rem; font-weight: 600; }
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+#progressFill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--good));
+  transition: width 240ms ease;
+}
 
 footer {
-  border-top: 1px solid color-mix(in oklab, var(--muted) 28%, transparent);
+  border-top: 1px solid var(--line);
   padding: 1rem 0 2rem;
 }
 
 .footer-inner {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
-button {
-  border: 1px solid var(--muted);
-  background: transparent;
-  color: var(--text);
-  padding: 0.55rem 0.8rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
+a { color: var(--accent); }
+
+@media (max-width: 600px) {
+  .month-head { flex-direction: column; }
 }

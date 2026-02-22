@@ -3,160 +3,189 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AGI Engineer Roadmap | 5-Month Fast-Track</title>
-  <meta name="description" content="A practical 5-month path to become an AI/AGI-focused engineer, with monthly goals, what to skip, and portfolio projects." />
+  <title>AI/AGI Engineer Fast-Track | 5-Month Roadmap</title>
+  <meta name="description" content="A practical five-month roadmap to become an AI/AGI-focused engineer with web, Python, API, and agent system skills." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="hero">
     <div class="container">
-      <p class="tag">Codex Test • GitHub Pages Ready</p>
+      <p class="tag">Codex-ready • GitHub Pages-ready • Portfolio-first</p>
       <h1>5-Month AI/AGI Engineer Learning Path</h1>
-      <p class="subtitle">A focused, job-oriented plan for web + Python + APIs + AI systems, with clear goals and projects each month.</p>
+      <p class="subtitle">If you want the fastest practical path: build one complete project each month, publish weekly, and avoid low-value rabbit holes.</p>
       <div class="cta-row">
-        <a class="btn" href="#roadmap">View Roadmap</a>
-        <a class="btn btn-ghost" href="#projects">Build Projects</a>
+        <a class="btn" href="#roadmap">Start Learning Path</a>
+        <a class="btn btn-ghost" href="#execution">Execution Plan</a>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <section id="why" class="card">
-      <h2>How this plan is designed</h2>
-      <ul>
-        <li><strong>Fast execution:</strong> learn only what you can apply immediately.</li>
-        <li><strong>Portfolio-first:</strong> every month ends with a working project.</li>
-        <li><strong>AI engineering focus:</strong> APIs, Python tooling, model usage, and deployment.</li>
-      </ul>
+    <section class="card quick-answer">
+      <h2>Short answer: what should you learn?</h2>
+      <p><strong>Month 1:</strong> Web + GitHub • <strong>Month 2:</strong> JavaScript + APIs • <strong>Month 3:</strong> Python for AI tooling • <strong>Month 4:</strong> Backend APIs (FastAPI) • <strong>Month 5:</strong> Agent systems + deployment.</p>
+      <p>Skip advanced theory until you can ship full products end-to-end.</p>
+    </section>
+
+    <section class="card controls" id="execution">
+      <h2>Execution controls</h2>
+      <div class="controls-row">
+        <label for="focusFilter">Focus area</label>
+        <select id="focusFilter">
+          <option value="all">All months</option>
+          <option value="web">Web</option>
+          <option value="api">API</option>
+          <option value="python">Python</option>
+          <option value="ai">AI/Agent</option>
+        </select>
+
+        <button id="resetProgress">Reset progress</button>
+        <button id="themeToggle" aria-label="Toggle light and dark mode">Toggle theme</button>
+      </div>
+      <p class="muted">Mark months complete as you finish projects. Progress is saved in your browser.</p>
+      <div class="progress-wrap">
+        <div class="progress-label"><span id="progressText">0 / 5 complete</span></div>
+        <div class="progress-bar" aria-hidden="true"><div id="progressFill"></div></div>
+      </div>
     </section>
 
     <section id="roadmap">
-      <h2>Monthly Roadmap (Total: 5 Months)</h2>
+      <h2>Detailed 5-Month Roadmap</h2>
       <div class="grid">
-        <article class="card month">
-          <h3>Month 1 — Web Foundations + GitHub Workflow</h3>
-          <p class="goal">Goal: Build and publish real static and interactive web pages.</p>
+        <article class="card month" data-focus="web">
+          <div class="month-head">
+            <h3>Month 1 — Web foundations + GitHub workflow</h3>
+            <label><input type="checkbox" class="month-check" data-month="1" /> Complete</label>
+          </div>
+          <p class="goal">Outcome: You can build and deploy clean, responsive websites with GitHub collaboration.</p>
           <h4>Learn</h4>
           <ul>
-            <li>HTML5, semantic structure, forms</li>
-            <li>Modern CSS (Flexbox/Grid, responsive design)</li>
-            <li>JavaScript basics (DOM, events, fetch)</li>
-            <li>Git + GitHub (branch, commit, PR, Issues)</li>
-            <li>Deploying with GitHub Pages</li>
+            <li>Semantic HTML, forms, accessibility basics</li>
+            <li>CSS layout (Flexbox/Grid), responsive design</li>
+            <li>JavaScript fundamentals (DOM/events/fetch)</li>
+            <li>Git, branching, pull requests, issues</li>
+            <li>GitHub Pages deployment</li>
           </ul>
           <h4>Do not learn yet</h4>
           <ul>
-            <li>Complex frontend frameworks (React/Vue) before JS fundamentals</li>
-            <li>Heavy animations and design systems</li>
+            <li>React/Vue before vanilla JavaScript confidence</li>
+            <li>Complex animation libraries</li>
           </ul>
-          <p><strong>Build:</strong> Personal roadmap website + a mini task tracker app.</p>
+          <p><strong>Build this month:</strong> Personal learning site + task tracker app.</p>
         </article>
 
-        <article class="card month">
-          <h3>Month 2 — Deeper JavaScript + API Integration</h3>
-          <p class="goal">Goal: Consume real APIs and manage client-side data flows.</p>
+        <article class="card month" data-focus="api">
+          <div class="month-head">
+            <h3>Month 2 — JavaScript depth + API integration</h3>
+            <label><input type="checkbox" class="month-check" data-month="2" /> Complete</label>
+          </div>
+          <p class="goal">Outcome: You can integrate external APIs and ship real data-driven UI.</p>
           <h4>Learn</h4>
           <ul>
-            <li>Async JavaScript (async/await, error handling)</li>
-            <li>REST API basics and JSON contracts</li>
-            <li>Auth basics (API keys, OAuth conceptually)</li>
-            <li>State handling in vanilla JS</li>
-            <li>Testing basics with simple unit tests</li>
+            <li>Async/await and robust error handling</li>
+            <li>REST APIs, JSON, pagination, rate limits</li>
+            <li>Frontend state management patterns</li>
+            <li>Testing basics for core JS functions</li>
           </ul>
           <h4>Do not learn yet</h4>
           <ul>
             <li>Micro-frontend architecture</li>
-            <li>Exotic JS build tooling</li>
+            <li>Over-engineered build pipelines</li>
           </ul>
-          <p><strong>Build:</strong> AI-news dashboard fetching from multiple APIs.</p>
+          <p><strong>Build this month:</strong> API-powered AI news and trend dashboard.</p>
         </article>
 
-        <article class="card month">
-          <h3>Month 3 — Python for AI Engineering</h3>
-          <p class="goal">Goal: Use Python confidently for automation and data processing.</p>
+        <article class="card month" data-focus="python ai">
+          <div class="month-head">
+            <h3>Month 3 — Python for AI engineering</h3>
+            <label><input type="checkbox" class="month-check" data-month="3" /> Complete</label>
+          </div>
+          <p class="goal">Outcome: You can write production-grade Python scripts and LLM-powered tools.</p>
           <h4>Learn</h4>
           <ul>
-            <li>Python core (functions, classes, typing)</li>
-            <li>Virtual environments + dependency management</li>
-            <li>Data tools: pandas, numpy basics</li>
-            <li>CLI scripting and file processing</li>
-            <li>Prompting workflows and SDK usage for LLM APIs</li>
+            <li>Python core, typing, modules, testing</li>
+            <li>venv/poetry, dependency and environment management</li>
+            <li>Data handling with pandas + numpy fundamentals</li>
+            <li>LLM API SDK usage, prompt workflows, retries</li>
           </ul>
           <h4>Do not learn yet</h4>
           <ul>
-            <li>Research-level deep learning math derivations</li>
-            <li>Distributed training infra</li>
+            <li>Training transformer models from scratch</li>
+            <li>Heavy MLOps stacks too early</li>
           </ul>
-          <p><strong>Build:</strong> Python command-line tool that summarizes docs with an LLM API.</p>
+          <p><strong>Build this month:</strong> Python CLI that summarizes repositories/docs using an LLM API.</p>
         </article>
 
-        <article class="card month">
-          <h3>Month 4 — API Engineering + Backend</h3>
-          <p class="goal">Goal: Build production-style AI-enabled backend services.</p>
+        <article class="card month" data-focus="api python">
+          <div class="month-head">
+            <h3>Month 4 — Backend API engineering</h3>
+            <label><input type="checkbox" class="month-check" data-month="4" /> Complete</label>
+          </div>
+          <p class="goal">Outcome: You can build secure backend APIs serving both app and AI features.</p>
           <h4>Learn</h4>
           <ul>
-            <li>FastAPI fundamentals (routes, models, validation)</li>
-            <li>Database basics (PostgreSQL/SQLite, CRUD)</li>
-            <li>Background jobs, caching, rate limits</li>
-            <li>Auth/JWT basics</li>
-            <li>Observability (logging, metrics, tracing basics)</li>
+            <li>FastAPI routes, pydantic models, validation</li>
+            <li>Database CRUD (SQLite/Postgres) and migrations</li>
+            <li>JWT auth, request limits, background tasks</li>
+            <li>Logging + monitoring basics</li>
           </ul>
           <h4>Do not learn yet</h4>
           <ul>
             <li>Premature microservices split</li>
-            <li>Overly complex cloud architecture</li>
+            <li>Kubernetes before shipping core product value</li>
           </ul>
-          <p><strong>Build:</strong> FastAPI service with one AI endpoint and one standard CRUD endpoint.</p>
+          <p><strong>Build this month:</strong> FastAPI service with CRUD + one AI endpoint.</p>
         </article>
 
-        <article class="card month">
-          <h3>Month 5 — AI Agent Systems + Deployment</h3>
-          <p class="goal">Goal: Deliver an end-to-end AI product publicly.</p>
+        <article class="card month" data-focus="ai api">
+          <div class="month-head">
+            <h3>Month 5 — Agent systems + deployment</h3>
+            <label><input type="checkbox" class="month-check" data-month="5" /> Complete</label>
+          </div>
+          <p class="goal">Outcome: You can ship an end-to-end AI product with retrieval, evaluation, and CI/CD.</p>
           <h4>Learn</h4>
           <ul>
-            <li>Agent patterns (tool use, planning, memory trade-offs)</li>
-            <li>RAG fundamentals (chunking, embeddings, retrieval)</li>
-            <li>Evaluation basics (quality, latency, cost)</li>
-            <li>Containerization and deployment (Docker + simple cloud host)</li>
-            <li>CI/CD with GitHub Actions</li>
+            <li>Agent patterns: tool-use, planning, memory trade-offs</li>
+            <li>RAG: chunking, embeddings, retrieval quality</li>
+            <li>Evaluation: latency, quality, cost trade-off</li>
+            <li>Docker, deployment, GitHub Actions CI/CD</li>
           </ul>
           <h4>Do not learn yet</h4>
           <ul>
-            <li>Trying to train your own frontier model</li>
-            <li>Over-optimizing GPUs before product-market validation</li>
+            <li>Custom frontier model training</li>
+            <li>GPU cluster optimization before product traction</li>
           </ul>
-          <p><strong>Build:</strong> AI assistant web app with retrieval + deployment + monitoring.</p>
+          <p><strong>Build this month:</strong> Deployed AI assistant with docs upload and retrieval.</p>
         </article>
       </div>
     </section>
 
     <section id="projects" class="card">
-      <h2>Portfolio Projects You Should Finish</h2>
+      <h2>Portfolio projects to prove you can build</h2>
       <ol>
-        <li><strong>GitHub Pages Roadmap site</strong> (Month 1)</li>
-        <li><strong>API-powered dashboard</strong> (Month 2)</li>
-        <li><strong>Python LLM CLI assistant</strong> (Month 3)</li>
-        <li><strong>FastAPI AI microservice</strong> (Month 4)</li>
-        <li><strong>Deployed AI product with CI/CD</strong> (Month 5)</li>
+        <li>Roadmap landing page on GitHub Pages</li>
+        <li>API dashboard web app</li>
+        <li>Python LLM command-line assistant</li>
+        <li>FastAPI backend with auth + AI endpoint</li>
+        <li>Public AI assistant with CI/CD and monitoring</li>
       </ol>
-      <p class="tip">Tip: Keep each project small, complete, documented, and publicly demoable.</p>
     </section>
 
     <section class="card">
-      <h2>Weekly cadence (works for all months)</h2>
+      <h2>Weekly schedule template</h2>
       <ul>
-        <li><strong>Mon–Thu:</strong> 2–3 hours learning + coding</li>
-        <li><strong>Fri:</strong> Refactor + write README</li>
-        <li><strong>Sat:</strong> Add one feature + tests</li>
-        <li><strong>Sun:</strong> Publish progress update on GitHub/LinkedIn</li>
+        <li><strong>Mon–Thu:</strong> 2–3h deep work (new concepts + coding)</li>
+        <li><strong>Friday:</strong> Refactor, tests, clean commits</li>
+        <li><strong>Saturday:</strong> Add a feature + deploy demo</li>
+        <li><strong>Sunday:</strong> Publish short build log and plan next week</li>
       </ul>
     </section>
   </main>
 
   <footer>
     <div class="container footer-inner">
-      <p>Built for Codex testing • Ready to publish on GitHub Pages.</p>
-      <button id="themeToggle" aria-label="Toggle dark mode">Toggle theme</button>
+      <p>Built as a complete Codex + GitHub Pages test project.</p>
+      <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages docs</a>
     </div>
   </footer>
 
