@@ -1,27 +1,41 @@
-# AI/AGI Engineer 5-Month Roadmap Site
+# Research AI Agent
 
-This repo contains a complete static website designed for GitHub Pages.
+This repository now contains a fully working **research AI agent** built in Python.
 
-## What this site includes
-- 5-month practical roadmap (web → JS/API → Python → backend API → AI agents)
-- "Learn now" vs "skip for now" guidance for each month
-- Monthly completion tracker with local persistence
-- Focus filter (Web/API/Python/AI)
-- Light/dark theme toggle
+## What it does
+- Searches DuckDuckGo HTML results for your research query.
+- Fetches and reads source pages.
+- Extracts useful text from each source.
+- Produces a structured Markdown research brief with findings and sources.
+- Supports **offline mode** using local files when network search is unavailable.
 
-## Run locally
+## Quick start
+
 ```bash
-python3 -m http.server 8000
+python3 research_agent.py "AI agent evaluation metrics" --max-results 5 --output report.md
 ```
-Open <http://127.0.0.1:8000>.
 
-## Deploy to GitHub Pages
-### Option A: automatic via GitHub Actions (recommended)
-1. Push the repo to GitHub.
-2. In GitHub: **Settings → Pages → Build and deployment → Source = GitHub Actions**.
-3. The included workflow (`.github/workflows/pages.yml`) deploys on every push to `main`.
+## Offline mode (works without internet)
 
-### Option B: branch deploy
-1. In GitHub: **Settings → Pages**.
-2. Choose **Deploy from a branch**.
-3. Select branch `main` and folder `/ (root)`.
+```bash
+python3 research_agent.py "RAG architecture tradeoffs" \
+  --local-file notes1.txt \
+  --local-file notes2.md \
+  --output report.md
+```
+
+## CLI options
+
+```bash
+python3 research_agent.py "query" [--max-results 5] [--output report.md] [--local-file file1 --local-file file2]
+```
+
+## Run tests
+
+```bash
+python3 -m unittest discover -s tests -v
+```
+
+## File structure
+- `research_agent.py`: core agent logic (search, parse, summarize, report generation).
+- `tests/test_agent.py`: unit tests for parsing and summarization behavior.
